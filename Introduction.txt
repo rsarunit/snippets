@@ -1,1 +1,2 @@
 http://community.polarion.com/projects/subversive/download/eclipse/3.0/update-site/
+http://community.polarion.com/projects/subversive/download/eclipse/3.0/builds/
