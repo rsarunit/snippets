@@ -1,0 +1,10 @@
+Please use stack
+push and pop and check
+//for loop eluthunga
+if(stack.peek().equals(s.charAt(i))){
+			mydata.pop();
+		}else{
+			stack.push(s.charAt(i));
+		}
+    
+    name ethavathu vaika
