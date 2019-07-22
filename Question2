@@ -1,0 +1,32 @@
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Demo {
+       public static void main(String[] args) {
+              System.out.println(new Demo().solution(new int[] { 1, 2, 3, 1, 2 }, new int[] { 2, 4, 6, 5, 10 }));
+       }
+
+       public int solution(int[] X, int[] y) {
+
+              Map<String, Integer> map = new HashMap<>();
+
+              for (int i = 0; i < X.length; i++) {
+                     String value = paguthiyagaMatru(X[i], y[i]);
+                     if (!map.containsKey(value)) {
+                           map.put(value, 0);
+                     }
+                     map.put(value, map.get(value) + 1);
+              }
+              return Collections.max(map.values());
+       }
+
+       public static long meSeeMa(long first, long second) {
+              return second == 0 ? first : meSeeMa(second, first % second); // Not bad for one line of code :)
+       }
+
+       public static String paguthiyagaMatru(long first, long second) {
+              long meeSeeMa = meSeeMa(first, second);
+              return (first / meeSeeMa) + "/" + (second / meeSeeMa);
+       }
+}
