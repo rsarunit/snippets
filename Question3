@@ -1,0 +1,21 @@
+int solution(int[] T) {
+              int KulirKalaNaatkal = 1;
+              int kodaiEnnikai = 0;
+              int migaKurainthaVeppaNilai = T[0];
+              int migaAthigaKodaiVeppaNilai = Integer.MIN_VALUE;
+              for (int i = 1; i < T.length; i++) {
+                     int veppaNilai = T[i];
+                     if (veppaNilai <= migaKurainthaVeppaNilai) {
+                           if (kodaiEnnikai > 0) {
+                                  KulirKalaNaatkal += kodaiEnnikai;
+                                  kodaiEnnikai = 0;
+                                  migaKurainthaVeppaNilai = migaAthigaKodaiVeppaNilai;
+                           }
+                           KulirKalaNaatkal++;
+                     } else {
+                           migaAthigaKodaiVeppaNilai = Math.max(migaAthigaKodaiVeppaNilai, veppaNilai);
+                           kodaiEnnikai++;
+                     }
+              }
+              return KulirKalaNaatkal;
+       }
