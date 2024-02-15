@@ -1,0 +1,35 @@
+<build>
+    <plugins>
+        <!-- Other plugins ... -->
+
+        <!-- Add the maven-clean-plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+                <execution>
+                    <id>clean-jar</id>
+                    <phase>clean</phase>
+                    <goals>
+                        <goal>clean</goal>
+                    </goals>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>${project.build.directory}</directory>
+                                <includes>
+                                    <include>*.jar</include>
+                                </includes>
+                                <excludes>
+                                    <!-- Exclude pom.xml from the JAR -->
+                                    <exclude>META-INF/maven/**/pom.xml</exclude>
+                                </excludes>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
