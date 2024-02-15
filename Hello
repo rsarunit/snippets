@@ -1,0 +1,28 @@
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+                <execution>
+                    <id>clean-meta-inf</id>
+                    <phase>prepare-package</phase>
+                    <goals>
+                        <goal>clean</goal>
+                    </goals>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>${project.build.outputDirectory}/META-INF/maven/your-group-id/your-artifact-id/</directory>
+                                <includes>
+                                    <include>pom.xml</include>
+                                </includes>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
